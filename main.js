@@ -25,16 +25,16 @@ ComfyJS.onChat = (user, message, flags, self, extra) => {
 
     let newMessage = document.createElement("li");
 
-    let userPrefix = "usr/";
+    let userPrefix = "/usr/";
 
     if (!userState.username.includes("bot") && userState.mod) {
-        userPrefix = "sys/"
+        userPrefix = "/sys/"
     } else if (userState.subscriber) {
-        userPrefix = "root/"
+        userPrefix = "/root/"
     } else if (userState.username.includes("bot")) {
-        userPrefix = "dev/";
+        userPrefix = "/dev/";
     } else if ("vip" in userState.badges) {
-        userPrefix = "rwx+/";
+        userPrefix = "/rwx+/";
     }
     
     //"vip": "rwx",
