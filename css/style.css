@@ -1,0 +1,108 @@
+@font-face {
+    font-family: 'UbuntuMonoB';
+    src: url('../ubuntu-font-family-0.83/UbuntuMono-B.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'UbuntuMonoRI';
+    src: url('../ubuntu-font-family-0.83/UbuntuMono-RI.ttf') format('truetype');
+}
+
+@keyframes slide-in-left {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes blink-caret {
+    from, to { background-color: transparent }
+    50% { background-color: rgb(24, 220, 24); }
+}
+
+html,body {
+    margin: 0;
+}
+
+#chat {
+    width: 300px;
+    height: 520px;
+    overflow: none;
+}
+
+#chat::-webkit-scrollbar {
+    display: none;
+}
+
+
+#chat li {
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+#chat li:last-of-type {
+    animation-name: slide-in-left;
+    animation-duration: 0.15s;
+    animation-timing-function: ease-in;
+}
+
+#chat li:not(:last-of-type):first-of-type {
+    opacity: 0.5;
+}
+
+
+#chat li .nickname {
+    font-family: 'UbuntuMonoRI';
+    color: #ffffff;
+    padding: 10px;
+    display: block;
+    word-break: break-all;
+}
+
+#chat li .prev-message {
+    font-family: 'UbuntuMonoB';
+    color: rgb(24, 220, 24);
+    display: block;
+    width: 100%;
+    word-break: break-all;
+}
+
+#chat li .message {
+    font-family: 'UbuntuMonoB';
+    color: rgb(24, 220, 24);
+    display: block;
+    width: 100%;
+    word-break: break-all;
+}
+
+#chat li .message:last-of-type::after {
+    content: '';
+    width: 10px;
+    height: 3px;
+    background-color: rgb(24, 220, 24);
+    animation: blink-caret .75s step-end infinite;
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 4px;
+}
+
+#chat li .message:not(:last-of-type)::after {
+    display: none;
+    content: none;
+}
+
+/* #chat li .message:last-of-type {
+
+} */
+
+#chat ul {
+    padding: 0;
+    list-style-type: none;
+    list-style-position: outside;
+}
+
