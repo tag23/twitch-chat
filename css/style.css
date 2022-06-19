@@ -70,6 +70,7 @@ html,body {
     display: block;
     width: 100%;
     word-break: break-all;
+    margin-top: 5px;
 }
 
 #chat li .message {
@@ -78,6 +79,7 @@ html,body {
     display: block;
     width: 100%;
     word-break: break-all;
+    margin-top: 5px;
 }
 
 #chat li .message:last-of-type::after {
